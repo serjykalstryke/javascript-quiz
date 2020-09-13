@@ -11,19 +11,19 @@
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 3rem;
     color: #ffffff;
     margin-bottom: 5rem;
 }
 
 h2 {
-    font-size: 4.2rem;
+    font-size: 3rem;
     margin-bottom: 4rem;
 }
 
 p, span {
     font-size: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .container {
