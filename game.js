@@ -118,13 +118,12 @@ let questions = [
 //timer function//
 function setTime() {
 setInterval(function() {
-    timerEl.textContent = timeLeft + " seconds remaining";
+    timerEl.textContent = timeLeft;
     timeLeft--;
 
     if (timeLeft <= 0) {
       timerEl.textContent = "";
       return window.location.assign('gameover.html');
-      clearInterval(setTime());
     }
 
   }, 1000);
