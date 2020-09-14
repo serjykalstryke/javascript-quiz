@@ -7,7 +7,7 @@ const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
 const timerEl = document.querySelector('.time')
 
-//global variables that are called in alter functions//
+//global variables that are called in later functions//
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
@@ -16,7 +16,7 @@ let availableQuestions = [];
 
 const SCORE_POINTS = 100
 const MAX_QUESTIONS = 4
-var timeLeft = 100
+var timeLeft = 60
 
 //Start game function//
 startGame = () => {
