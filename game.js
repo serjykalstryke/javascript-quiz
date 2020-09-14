@@ -63,6 +63,10 @@ choices.forEach(choice => {
 
         if (classToApply === 'correct') {
             incrementScore(SCORE_POINTS);
+        } 
+
+        if (classToApply != 'correct') {
+            timeLeft -= 20;
         }
 
         selectedChoice.parentElement.classList.add(classToApply);
@@ -82,35 +86,35 @@ incrementScore = num => {
 //Questions array//
 let questions = [
     {
-        question: 'what is 2 + 2',
-        choice1: '2',
-        choice2: '4',
-        choice3: '22',
-        choice4: '17',
+        question: 'Who invented JavaScript?',
+        choice1: 'Steve Jobs',
+        choice2: 'Douglas Crockford',
+        choice3: 'Brian Eich',
+        choice4: 'Sheryl Sandberg',
         answer: 2
     },
     {
-        question: 'The tallest building in the world is located in which city?',
-        choice1: 'Dubai',
-        choice2: 'New York',
-        choice3: 'Shanghai',
-        choice4: 'None of the Above',
+        question: 'Which tool can you use to ensure code quality?',
+        choice1: 'ESLint',
+        choice2: 'Angular',
+        choice3: 'jQuery',
+        choice4: 'Node.JS',
         answer: 1
     },
     {
-        question: 'What percentage of American adults believe that chocolate milk comes from brown cows?',
-        choice1: '20%',
-        choice2: '18%',
-        choice3: '7%',
-        choice4: '33%',
+        question: 'Which one of these is a JavaScript package manager?',
+        choice1: 'nps',
+        choice2: 'rpm',
+        choice3: 'npm',
+        choice4: 'Node.js',
         answer: 3
     },
     {
-        question: 'Approximately what percent of U.S. power outgages are caused by squirrels?',
-        choice1: '10-20%',
-        choice2: '5-10%',
-        choice3: '15-20%',
-        choice4: '30-40%',
+        question: 'Inside of what HTML Tag would you put Javascript code?',
+        choice1: '<script>',
+        choice2: '<a>',
+        choice3: '<src>',
+        choice4: '<style>',
         answer: 1
     },
 ]
