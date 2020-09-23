@@ -19,7 +19,7 @@ const MAX_QUESTIONS = 4
 var timeLeft = 60
 
 //Start game function//
-startGame = () => {
+function startGame() {
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
@@ -28,57 +28,28 @@ startGame = () => {
 }
 
 //Generates next question from question array, as well as changes the progress bar to show how many questions are left//
-getNewQuestion = () => {
+function getNewQuestion() {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-        localStorage.setItem('mostRecentScore', score);
+        localStorage.setItem('mostRecentScore', score + timeLeft);
 
         return window.location.assign('end.html');
     }
 
     questionCounter++;
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
-    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`;
-
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionsIndex];
     question.innerText = currentQuestion.question;
 
-    choices.forEach(choice => {
+    choices.forEach(function(choice) {
         const number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice' + number];
     });
     availableQuestions.splice(questionsIndex, 1);
     acceptingAnswers = true;
 }
-
-//function for selecting an answer, it waits for a click and then shows whether the answer was correct or not. correct answers call function to increment the score by constant SCORE_POINTs which is set above to 100 points//
-choices.forEach(choice => {
-    choice.addEventListener('click', e => {
-        if (!acceptingAnswers) return
-        acceptingAnswers = false;
-        const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset['number'];
-
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
-
-        if (classToApply === 'correct') {
-            incrementScore(SCORE_POINTS);
-        } 
-
-        if (classToApply != 'correct') {
-            timeLeft -= 20;
-        }
-
-        selectedChoice.parentElement.classList.add(classToApply);
-
-        setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply)
-            getNewQuestion()
-        }, 1000)
-})
-})
 //function to increment the score//
-incrementScore = num => {
+function incrementScore(num) {
     score += num
     scoreText.innerText = score
 }
@@ -132,5 +103,33 @@ setInterval(function() {
 
   }, 1000);
 }
+
+//function for selecting an answer, it waits for a click and then shows whether the answer was correct or not. correct answers call function to increment the score by constant SCORE_POINTs which is set above to 100 points//
+choices.forEach(function(choice) {
+    choice.addEventListener('click', function(e) {
+        if (!acceptingAnswers) return
+        acceptingAnswers = false;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset['number'];
+
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+
+        if (classToApply === 'correct') {
+            incrementScore(SCORE_POINTS);
+            timeLeft += 10
+        } 
+
+        if (classToApply != 'correct') {
+            timeLeft -= 20;
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply);
+
+        setTimeout(function() {
+            selectedChoice.parentElement.classList.remove(classToApply)
+            getNewQuestion()
+        }, 1000)
+})
+})
 //calls function start game to allow quiz to start//
 startGame()

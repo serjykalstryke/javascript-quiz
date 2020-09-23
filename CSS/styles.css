@@ -27,6 +27,10 @@ p, span {
     /* margin-bottom: 1rem; */
 }
 
+#head {
+    font-size: 4rem;
+}
+
 .container {
     width: 100vw;
     height: 100vh;
@@ -139,3 +143,6 @@ end-text: {
     font-size: 2.5rem;
 }
 
+.fa-smile-beam {
+    font-size: 2.5rem;
+}

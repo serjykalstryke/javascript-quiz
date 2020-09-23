@@ -52,23 +52,12 @@
     text-align: center;
 }
 
-#progressBar {
-    width: 20rem;
-    height: 3rem;
-    border: 0.2rem solid #5DFC0A;
-    margin-top: 2rem;
-    border-radius: 50px;
-    overflow: hidden;
-}
-
-#progressBarFull {
-    height: 100%;
-    background: #5DFC0A;
-    width: 0%
-}
-
 @media screen and (max-width: 768px) {
     .choice-container {
         min-width: 40px;
     } 
 } 
+
+#progressText {
+    font-size: 3rem
+}

@@ -8,20 +8,17 @@ const mostRecentScore = localStorage.getItem('mostRecentScore')
 //gets value of score from local storage, if no scores present sets highscores var to empty array//
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [] 
 
-//limits leaderboard to 5 most recent scores//
-const MAX_HIGH_SCORES = 5
-
 //sets final score variable equal to local storage element mostRecentScore
 finalScore.innerText = mostRecentScore
 
 //dissalows saving a high score without name input//
-username.addEventListener('keyup', () => {
+username.addEventListener('keyup', function() {
     saveScoreBtn.disabled = !username.value
 })
 
-//save high score click event function
-saveHighScore = e => {
-    e.preventDefault()
+//save high score function, takes in click event and saves high score//
+var saveHighScore = function(e) {
+    event.preventDefault()
 
     const score = {
         score: mostRecentScore,
@@ -30,7 +27,7 @@ saveHighScore = e => {
 
     highScores.push(score)
 
-    highScores.sort((a,b) => {
+    highScores.sort(function(a,b) {
         return b.score - a.score
     })
 
