@@ -36,4 +36,4 @@ You are required to submit the following for review:
 
 * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
-<a href="https://ibb.co/y5XmjZm"><img src="https://i.ibb.co/Y834s14/Screenshot-from-2020-09-23-16-48-01.png" alt="Screenshot-from-2020-09-23-16-48-01" border="0">
+<a href="https://ibb.co/y5XmjZm"><img src="https://i.ibb.co/Y834s14/Screenshot-from-2020-09-23-16-48-01.png" alt="Screenshot-from-2020-09-23-16-48-01">
