@@ -6,4 +6,4 @@ The application iterates through a series of question objects nested in an array
 
 There is a timer, when the time runs out a gameover page is displayed. Incorrect answers result in a 20 second time deduction. If you complete the quiz in time you have the option to save your high score and then play again.
 
-<img src="https://i.postimg.cc/XqRhZ7y4/Screenshot-from-2020-09-14-17-37-24.png">
+<a href="https://ibb.co/y5XmjZm"><img src="https://i.ibb.co/Y834s14/Screenshot-from-2020-09-23-16-48-01.png" alt="Screenshot-from-2020-09-23-16-48-01" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>upload image</a><br />
